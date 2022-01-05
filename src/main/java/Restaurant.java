@@ -1,4 +1,3 @@
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +59,11 @@ public class Restaurant {
 
     public String getName() {
         return name;
+    }
+
+    public double getOrderValue(List<String> items){
+        return -1;
+        //returning dummy value -1 to compile the code
     }
 
 }
