@@ -61,9 +61,18 @@ public class Restaurant {
         return name;
     }
 
-    public double getOrderValue(List<String> items){
-        return -1;
-        //returning dummy value -1 to compile the code
+    public double getOrderValue(List<String> items) throws itemNotFoundException {
+        double totalPrice = 0;
+        for (String eachItem : items) {
+            Item item = menu.stream().filter(x -> x.getName().equalsIgnoreCase(eachItem)).findFirst().orElse(null);
+            if(item!= null) {
+                totalPrice += item.getPrice();
+            }
+            else
+                throw new itemNotFoundException(" Item "+eachItem+" is not present in the menu");
+        }
+        return totalPrice;
+
     }
 
 }
