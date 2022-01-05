@@ -80,7 +80,7 @@ class RestaurantTest {
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     @Test
-    public void return_order_value_from_item_list_selected(){
+    public void return_order_value_from_item_list_selected() throws itemNotFoundException {
 
         restaurant.addToMenu("Sweet corn soup",119);
         restaurant.addToMenu("Vegetable lasagne", 269);
